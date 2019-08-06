@@ -1,0 +1,32 @@
+<br/>
+<br/>
+<br/>
+<main role="main">
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <div class="container text-center">
+        <h1 class="display-3 text-primary">Acceuil</h1>
+        <p>consulter tout les potins</p>
+        <p>pour acceder a la page d un potin clique sur son blue title</p>
+        </div>
+      </div>
+      
+      <div class="container">
+        <!-- Example row of columns -->
+        <div class="row d-flex justify-content-around">
+            <% @gossips.each do |g| %>
+            <div class="col-md-5 border border-primary shadow p-3 mb-5 bg-white rounded">
+                <h3><%=link_to "#{g.title}", gossip_path(g.id)%></h3>
+                <p><%=g.content %></p>
+                <p>auteur : <%=g.user.last_name %></p>
+            </div>
+            <% end %>
+            
+        </div>
+
+        <hr>
+
+      </div> <!-- /container -->
+        
+  </main>

@@ -1,0 +1,29 @@
+    <br/><br/><br/>
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <div class="container text-center">
+        <h1 class="display-3 text-primary"><%= @user.first_name%> <%= @user.last_name%></h1>
+        <p>profil</p>
+        <p>toute les infos sur cette auteur</p>
+        </div>
+      </div>
+      <div class="text-center">
+        <p>email : <%=@user.email%></p>
+        <p>age : <%=@user.age%></p>
+        <p>ville : <%=@user.city.name%></p>
+        <p>description : 
+        <%=
+            if @user.description == nil
+                "pas encore de description"
+            else
+                @user.description
+            end
+        %>
+        </p>
+        <p>autre potins : 
+        <% @user.gossips.each do |g|%>
+            <%= link_to g.title, gossip_path(g.id)%> 
+        <%end%>
+        </p>
+        </div>
+

@@ -1,0 +1,12 @@
+<br/><br/><br/>
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container text-center">
+    <h1 class="display-3 text-primary"><%= @gossip.title%></h1>
+    <h3>de <%=link_to "#{@gossip.user.first_name} #{@gossip.user.last_name}", user_path(@gossip.user.id)%><h3>
+    </div>
+</div>
+<div class="text-center">
+<p>potin : <%=@gossip.content%></p>
+</div>
+
