@@ -13,7 +13,7 @@
       <div class="container">
         <!-- Example row of columns -->
         <div class="row d-flex justify-content-around">
-            <% @gossips.each do |g| %>
+            <% @gossip.each do |g| %>
             <div class="col-md-5 border border-primary shadow p-3 mb-5 bg-white rounded">
                 <h3><%=link_to "#{g.title}", gossip_path(g.id)%></h3>
                 <p><%=g.content %></p>

@@ -1,4 +1,4 @@
-class Gossip < ApplicationRecor
-    validates_presence_of :title, :content
+class Gossip < ApplicationRecord
     belongs_to :user
+    validates_presence_of :title, :content
 end

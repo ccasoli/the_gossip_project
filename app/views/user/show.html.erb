@@ -20,7 +20,7 @@
             end
         %>
         </p>
-        <p>autre potins : 
+        <p>Ses potins : 
         <% @user.gossips.each do |g|%>
             <%= link_to g.title, gossip_path(g.id)%> 
         <%end%>
