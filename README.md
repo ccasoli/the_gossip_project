@@ -1,6 +1,12 @@
 # README
 
 <h1>The Gossip Project</h1>
+<h2>installer application</h2>
+<p>applique les gems:bundle install</p>
+<p>creer un base de donnee : rails db:create</p>
+<p>migration : rails db:migrate</p>
+<p>inject base faker : rails db:seed</p>
+<p>lance serveur localhost:3000/ : rails s</p>
 
 <h3>controllers:</h3>
 <h4>home:</h4>
@@ -15,3 +21,7 @@
     <p>ici c est nous</p>
 <h4>contact:</h4>
     <p>any question ?</p>
+    
+    diagramme uml :
+
+![alt text](img/uml-gossip.png)
