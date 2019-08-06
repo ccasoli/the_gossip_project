@@ -1,5 +1,9 @@
 class HomeController < ApplicationController
   def show
-  @gossips = Gossip.all
+
+  end
+  def index
+    @gossip = Gossip.last(3)
+    @user = User.last(3)
   end
 end

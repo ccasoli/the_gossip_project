@@ -1,0 +1,30 @@
+    <div class="jumbotron">
+        <div class="container text-center">
+            <h1 class="display-3 text-primary">Super Potin in coming</h1>
+            <p>fais passer un message</p>
+        </div>
+    </div>
+<div class="container">
+    <form action= <%= gossip_index_path %> method="POST">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <div class="form-group">
+            <label for="texte">Ton prenom : </label>
+            <input type="text" id="first_name" class="form-control" name="first_name" placeholder="prenom">
+        </div>
+        <div class="form-group">
+            <label for="texte">Ton nom : </label>
+            <input type="text" id="last_name" class="form-control" name="last_name" placeholder="nom">
+        </div>
+        <div class="form-group">
+            <label for="texte">titre : </label>
+            <input type="text" id="title" class="form-control" name="title" placeholder="titre">
+        </div>
+        <div class="form-group">
+            <label for="texte">potin : </label>
+            <textarea id="content" class="form-control" name="content" placeholder="potin"></textarea>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn">Valider</button>
+        </div>
+    </form>
+</div>

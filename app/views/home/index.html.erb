@@ -1,0 +1,55 @@
+
+    <div class="jumbotron">
+        <div class="container text-center">
+        <h1 class="display-3 text-primary">The Gossip World</h1>
+       <button type="button" class="btn btn-primary"><%=link_to "Mon experience", login_index_path, class: "text-white text-decoration-none"%></button>
+        <button type="button" class="btn btn-primary"><%=link_to "Ajouter un potin", new_gossip_path, class: "text-white text-decoration-none"%></button>
+        </div>
+      </div>
+
+<main class="container">
+      <div class="my-3 p-3 bg-white rounded box-shadow">
+        <h6 class="border-bottom border-gray pb-2 mb-0">Derniers potins</h6>
+        <% @gossip.each do|g|%>
+            <h6 class="mt-2"><%= g.title%><small> date : <%= g.created_at%></small></h6>
+          <div class="media text-muted">
+            <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+            <strong class="d-block text-gray-dark">Auteur : <%=link_to "#{g.user.first_name} #{g.user.last_name}", user_path(g.user.id)%></strong>
+           <%= g.content.truncate(100)%>
+           <%= link_to "suite", gossip_path(g.id) %>
+            </p>
+          </div>
+          <%end%>
+          <small class="d-block text-right mt-3">
+            <%= link_to 'Tous', gossip_index_path%>
+          </small>
+        </div>
+  <hr>
+      <div class="my-3 p-3 bg-white rounded box-shadow">
+        <h6 class="border-bottom border-gray pb-2 mb-0">Suggestions</h6>
+        <% @user.each do |u|%>
+        <div class="media text-muted pt-3">
+          <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+            <div class="d-flex justify-content-between align-items-center w-100">
+              <strong class="text-gray-dark"><%= u.first_name%> <%= u.last_name%></strong>
+              <%= link_to "Fiche", user_path(u.id)%>
+            </div>
+            <span class="d-block">Nombre de potins : <%=u.gossips.size%></span>
+          </div>
+        </div>
+        <%end%>
+      </div>
+    </main>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/vendor/holder.min.js"></script>
+    <script src="offcanvas.js"></script>
+  
+
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" preserveAspectRatio="none" style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;"><defs><style type="text/css"></style></defs><text x="0" y="2" style="font-weight:bold;font-size:2pt;font-family:Arial, Helvetica, Open Sans, sans-serif">32x32</text></svg></body>
