@@ -1,0 +1,16 @@
+<div class="jumbotron">
+    <div class="container text-center">
+        <h1 class="display-3 text-primary"><%= @gossip.title%></h1>
+    </div>
+</div>
+
+<div class="container text-center">
+<%= form_for @gossip do |g| %>
+  <%= g.label 'titre' %><br>
+  <%= g.text_field :title %><br>
+
+  <%= g.label 'potin' %><br>
+  <%= g.text_field :content %><br>
+
+  <%= g.submit "valider" %>
+<% end %>

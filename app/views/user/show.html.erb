@@ -10,7 +10,7 @@
       <div class="text-center">
         <p>email : <%=@user.email%></p>
         <p>age : <%=@user.age%></p>
-        <p>ville : <%=@user.city.name%></p>
+        <p>ville : <%=link_to @user.city.name, city_path(@user.city_id)%></p>
         <p>description : 
         <%=
             if @user.description == nil

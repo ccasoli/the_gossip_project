@@ -18,6 +18,12 @@
   <body>
     <br/>
     <br/>
+    <% if flash[:success] %>
+      <div class="alert alert-success" role="alert"><%= flash[:success] %></div>
+    <%end%>
+    <% if flash[:alert] %>
+      <div class="alert alert-danger" role="alert"><%= flash[:alert] %></div>
+    <%end%>
     <%= yield %>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <%= link_to "The Gossip Project", home_index_path, class: "navbar-brand" %>

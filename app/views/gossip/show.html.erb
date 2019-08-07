@@ -9,5 +9,7 @@
 <div class="text-center">
 <p>potin : <%=@gossip.content%></p>
 <p>date : <%= @gossip.created_at%></p>
+<p><%= link_to "edit", edit_gossip_path%></p>
+<p><%= link_to "supprimer", gossip_path(@gossip.id), :method => :delete%>
 </div>
 
