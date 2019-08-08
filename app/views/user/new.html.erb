@@ -1,0 +1,26 @@
+    <div class="jumbotron">
+        <div class="container text-center">
+            <h1 class="display-3 text-primary">Creer un compte</h1>
+            <p>remplie les champs</p>
+        </div>
+    </div>
+    <div class="container text-center">
+    <form action= <%= user_index_path %> method="POST">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <div class="form-group">
+            <input type="text" id="first_name" class="form-control" name="first_name" placeholder="prenom">
+        </div>
+        <div class="form-group">
+            <input type="text" id="last_name" class="form-control" name="last_name" placeholder="nom">
+        </div>
+        <div class="form-group">
+            <input type="text" id="email" class="form-control" name="email" placeholder="email">
+        </div>
+        <div class="form-group">
+            <input type="text" id="password" class="form-control" name="password" placeholder="mot de passe">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Valider</button>
+        </div>
+    </form>
+</div>

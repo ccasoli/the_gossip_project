@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
-  get 'comment/show'
-  root 'home#index'
+  root 'session#new'
   resources :login
   resources :home
   resources :team
   resources :contact
   resources :welcome
-  resources :gossip 
-  resources :comments
+  resources :gossip do
+    resources :comments
+  end
   resources :user
   resources :city
+  resources :session
 end

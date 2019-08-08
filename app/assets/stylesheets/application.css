@@ -15,7 +15,7 @@
  */
 
 /* BASIC */
-  
+  /*css */
   body {
     font-family: "Poppins", sans-serif;
     height: 100vh;
@@ -260,8 +260,6 @@
     width: 100%;
   }
   
-  
-  
   /* OTHERS */
   
   *:focus {
@@ -271,4 +269,6 @@
   #icon {
     width:60%;
   }
+
+  /*-------------------------------*/
   

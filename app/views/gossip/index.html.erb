@@ -18,6 +18,7 @@
                 <h3><%=link_to "#{g.title}", gossip_path(g.id)%></h3>
                 <p><%=g.content %></p>
                 <p>auteur : <%=g.user.last_name %></p>
+                <p>c : <%= g.comments.size%></p>
             </div>
             <% end %>
             

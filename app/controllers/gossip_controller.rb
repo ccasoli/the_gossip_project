@@ -1,6 +1,6 @@
 class GossipController < ApplicationController
   def show
-    @gossip = Gossip.find(params['id'])
+    @gossip = Gossip.find(params[:id])
   end
 
   def index
@@ -8,23 +8,23 @@ class GossipController < ApplicationController
   end
 
   def new
+    as_to_login
     @gossip = Gossip.new
-    @user = User.new
   end
 
   def create
-    @user = User.new(first_name: params[:first_name], last_name: params[:last_name], city_id: 1)
-    @gossip = Gossip.new(title: params[:title], content: params[:content], user: @user)
-    if @user.save && @gossip.save
+    gossip = Gossip.new(title: params[:title], content: params[:content], user_id: session[:user_id])
+    if gossip.save
       flash[:success] = "le potin a ete creer"
       redirect_to home_index_path
     else
-      flash[:alert] = "les champs sont mal rempli"
-      render'new'
+      flash[:alert] = "le potin n a pas ete rempli"
+      render 'new'
     end
   end
 
   def edit
+    as_to_login
     @gossip = Gossip.find(params[:id])
   end
 
@@ -44,7 +44,12 @@ class GossipController < ApplicationController
 
   def destroy
     @gossip = Gossip.find(params[:id])
-    @gossip.destroy
-    redirect_to gossip_index_path
+    if @gossip.destroy
+      flash[:success] = "potin supprimer"
+      redirect_to gossip_index_path
+    else
+      flash[:alert] = "le potin n a pas ete supprimer"
+      redirect_to @gossip
+    end
   end
 end

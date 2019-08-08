@@ -10,16 +10,20 @@
       <div class="text-center">
         <p>email : <%=@user.email%></p>
         <p>age : <%=@user.age%></p>
-        <p>ville : <%=link_to @user.city.name, city_path(@user.city_id)%></p>
-        <p>description : 
-        <%=
+        <p>ville : <%=
+            if @user.city == nil 
+                "pas de ville associer"
+            else
+                link_to @user.city.name, city_path(@user.city_id)
+            end
+            %></p>
+        <p>description : <%=
             if @user.description == nil
                 "pas encore de description"
             else
                 @user.description
             end
-        %>
-        </p>
+        %></p>
         <p>Ses potins : 
         <% @user.gossips.each do |g|%>
             <%= link_to g.title, gossip_path(g.id)%> 

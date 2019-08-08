@@ -1,0 +1,23 @@
+
+    <div class="jumbotron">
+        <div class="container text-center">
+            <h1 class="display-3 text-primary">Login</h1> 
+       </div>
+      </div>
+        <div class="container text-center">
+            <div class="login-form">
+                <form action= <%= session_index_path %> method="POST">
+                    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="text" id="email" class="form-control" name="email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label>Mot de passe</label>
+                        <input type="text" id="password" class="form-control" name="password" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                    <%= link_to "Signin", new_user_path, class: 'btn btn-primary'%>
+                </form>
+            </div>
+        </div>
