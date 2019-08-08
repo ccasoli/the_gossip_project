@@ -9,12 +9,13 @@ class GossipController < ApplicationController
 
   def new
     @gossip = Gossip.new
+    @user = User.new
   end
 
   def create
-    user = User.create(first_name: params[:first_name], last_name: params[:last_name], city_id: 1)
-    gossip = Gossip.create(title: params[:title], content: params[:content], user: user)
-    if user.save && gossip.save
+    @user = User.new(first_name: params[:first_name], last_name: params[:last_name], city_id: 1)
+    @gossip = Gossip.new(title: params[:title], content: params[:content], user: @user)
+    if @user.save && @gossip.save
       flash[:success] = "le potin a ete creer"
       redirect_to home_index_path
     else
